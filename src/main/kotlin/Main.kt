@@ -5,11 +5,6 @@ import kotlin.text.Charsets.UTF_8
 //fun sha256(str: String): ByteArray = MessageDigest.getInstance("SHA-256").digest(str.toByteArray(UTF_8))
 //fun ByteArray.toHex() = joinToString(separator = "") { byte -> "%02x".format(byte) }
 
-class Main{
-
-}
-
-
 fun main()  {
 
     //println(sha256("Hello, world!").toHex())

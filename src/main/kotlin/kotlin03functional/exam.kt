@@ -32,26 +32,30 @@ fun main(){
     //list.forEach{ println(it) }
 
     //exam3
-    collection3.let{
-        with(it){
-            for( index in 0 until 10 ) add(Random.nextInt(1000)*2)
-            add(null)
-            val result = filter { it?.rem(2) == 0 }
-                .take(100)
-                .forEach{ println(it)}
-        }
+    with(collection3){
+        for( index in 0 until 10 ) add(Random.nextInt(1000)*2)
+        add(null)
+        val result = filter { it1 -> it1?.rem(2) == 0 }
+            .take(100)
+            .forEach{ println(it)}
     }
 
-//    val collection = collection3.filter{ it }
-//            .take(10)
-//    with(collection){
-//        forEach{ println(it)}
-//    }
+    //exam3 - old
+    //collection3.let{ it ->
+//        with(it){
+//            for( index in 0 until 10 ) add(Random.nextInt(1000)*2)
+//            add(null)
+//            val result = filter { it1 -> it1?.rem(2) == 0 }
+//                .take(100)
+//                .forEach{ println(it)}
+//        }
+    //}
+
 }
 
 fun printInfo(data: Map<String, List<Int>>) {
 
-    val validData = data.filterNot { it.value.any { it < 0 } }
+    val validData = data.filterNot { it1 -> it1.value.any { it < 0 } }
     val averageAll = validData.flatMap { it.value }.average()
     println("Средняя выручка: $averageAll")
 
@@ -68,5 +72,5 @@ fun printInfo(data: Map<String, List<Int>>) {
     //Месяцы с ошибками
     println(" ")
     println("Месяцы с ошибками:")
-    data.filter { it.value.any { it < 0 } }.forEach { println(it.key + " ") }
+    data.filter { it1 -> it1.value.any { it < 0 } }.forEach { println(it.key + " ") }
 }
